@@ -8,32 +8,34 @@
 
     <title>Laravel</title>
     <link rel="stylesheet" href="css/nav-style.css">
+    <link rel="stylesheet" href="css/main.css">
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="css/mdb.min.css">
 
 </head>
 
-<body>
+<body class="pb-5">
     <header class="fixed-top">
         <nav class="navbar navbar-expand-lg navbar-light px-3">
             <a class="navbar-brand p-0" href="#"><img src="img/logo.png" class="img-logo"></a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navBar"
-                aria-controls="myNavbarToggler13" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
+            <button class="navbar-toggler collapsed" type="button" data-mdb-toggle="collapse" data-mdb-target="#navBar"
+                aria-controls="navBar" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="fas fa-bars"></i>
             </button>
             <div class="collapse navbar-collapse" id="navBar">
                 <ul class="navbar-nav mx-auto">
-                    <li class="nav-item active_link">
-                        <a class="nav-link" href="#">Home</a>
+                    <li class="nav-item {{ 'home' == request()->path() ? 'active_link' : '' }}">
+                        <a class="nav-link" href="/home">Home</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">My Account</a>
+                    <li class="nav-item {{ 'myAccount' == request()->path() ? 'active_link' : '' }}">
+                        <a class="nav-link" href="/myAccount">My Account</a>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item {{ 'myBills' == request()->path() ? 'active_link' : '' }}">
                         <a class="nav-link" href="#">My Bills</a>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item {{ 'contact' == request()->path() ? 'active_link' : '' }}">
                         <a class="nav-link" href="#">Contact Us</a>
                     </li>
                 </ul>
@@ -41,15 +43,14 @@
         </nav>
     </header>
 
-    <div class="container" style="margin-top: 250px;">
+    <div class="container-fluid px-5" style="margin-top: 250px;">
         @yield('content')
     </div>
 
+    <script src="js/main.js"></script>
     <script src="js/jquery-3.6.0.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
-    </script>
-
+    <script src="js/mdb.min.js"></script>
+    @yield('javascript')
     <script>
         $(document).on("scroll", function() {
 
@@ -58,10 +59,10 @@
             } else {
                 $("nav img").removeClass("scrollNavImg");
             }
-
         });
-    </script>
 
+    </script>
+    
 </body>
 
 </html>

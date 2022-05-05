@@ -15,11 +15,15 @@
   .navbar .nav-item {
     padding: 0.5em 1em;
   }
+
+  #navBar{
+    margin-top: -2rem;
+  }
 }
 
 @media only screen and (max-width: 992px) {
-  nav img{
-    height: 50px;
+  header nav img{
+    height: 50px !important;
   }
 }
 
@@ -37,11 +41,7 @@ nav{
   border-bottom: 1px solid;
 }
 
-#navBar{
-  margin-top: -2rem;
-}
-
-img{
+header nav img{
   height: 150px;
   
   /* transition */

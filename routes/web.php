@@ -22,3 +22,4 @@ Route::get('/', function () {
 Route::post('/login', [AuthController::class, 'login']);
 
 Route::get('/home', [PageController::class, 'home']);
+Route::get('/myAccount', [PageController::class, 'myAccount']);

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\tenant;
 use Illuminate\Http\Request;
 use Hash;
+use Session;
 
 class AuthController extends Controller
 {

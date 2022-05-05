@@ -25,8 +25,6 @@
 
     </style>
 
-    <!-- MDB icon -->
-    <link rel="icon" href="img/mdb-favicon.ico" type="image/x-icon">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <!-- Google Fonts Roboto -->
@@ -98,8 +96,7 @@
                     },
                     success: function(data) {
                         if (data.status) {
-                            $('.alert-danger').css("display", "block");
-                            $('.alert-danger').text('Success');
+                            window.location.href = "/home";
                         } else {
                             $('.alert-danger').css("display", "block");
                             $('.alert-danger').text('Invalid Credentials.');
