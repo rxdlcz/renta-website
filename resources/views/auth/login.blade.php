@@ -44,13 +44,6 @@
                         <div class="card-body p-5 text-center">
                             <img src="../img/logo.png" id="icon" alt="User Icon">
                             <h3 class="mb-3 mt-2">Sign in</h3>
-                            {{-- @if (Session::has('success'))
-                                <div class="alert alert-success">{{ Session::get('success') }}</div>
-                            @endif
-
-                            @if (Session::has('fail'))
-                                <div class="alert alert-success">{{ Session::get('fail') }}</div>
-                            @endif --}}
 
                             <div class="alert alert-danger" style="display:none;"></div>
                             <form id="login-form">

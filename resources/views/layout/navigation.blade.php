@@ -33,7 +33,7 @@
                         <a class="nav-link" href="/myAccount">My Account</a>
                     </li>
                     <li class="nav-item {{ 'myBills' == request()->path() ? 'active_link' : '' }}">
-                        <a class="nav-link" href="#">My Bills</a>
+                        <a class="nav-link" href="#">About</a>
                     </li>
                     <li class="nav-item {{ 'contact' == request()->path() ? 'active_link' : '' }}">
                         <a class="nav-link" href="#">Contact Us</a>
