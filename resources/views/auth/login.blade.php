@@ -78,7 +78,7 @@
     <script>
         $(function() {
             $('#login-form').on('submit', function(e) {
-                e.preventDefault();
+                e.preventDefault();              
                 $.ajax({
                     type: "POST",
                     url: "/login",
@@ -86,6 +86,7 @@
                     data: $('#login-form').serialize(),
                     beforeSend: function() {
                         $('.alert-danger').css("display", "none");
+                        $('input[type=password]').val('');
                     },
                     success: function(data) {
                         if (data.status) {

@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
-    <title>Laravel</title>
+    <title>Renta - @yield('title')</title>
     <link rel="stylesheet" href="css/nav-style.css">
     <link rel="stylesheet" href="css/main.css">
 
@@ -14,6 +14,11 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="css/mdb.min.css">
 
+    <style>
+        /* @import url('https://fonts.googleapis.com/css2?family=Koulen&family=Paytone+One&display=swap'); */
+        @import url('https://fonts.googleapis.com/css2?family=Koulen&family=Nunito:wght@300&family=Paytone+One&display=swap');
+    </style>
+    
 </head>
 
 <body class="pb-5">
@@ -25,15 +30,15 @@
                 <i class="fas fa-bars"></i>
             </button>
             <div class="collapse navbar-collapse" id="navBar">
-                <ul class="navbar-nav mx-auto">
+                <ul class="navbar-nav mx-auto paytone-font">
                     <li class="nav-item {{ 'home' == request()->path() ? 'active_link' : '' }}">
                         <a class="nav-link" href="/home">Home</a>
                     </li>
                     <li class="nav-item {{ 'myAccount' == request()->path() ? 'active_link' : '' }}">
                         <a class="nav-link" href="/myAccount">My Account</a>
                     </li>
-                    <li class="nav-item {{ 'myBills' == request()->path() ? 'active_link' : '' }}">
-                        <a class="nav-link" href="#">About</a>
+                    <li class="nav-item {{ 'aboutUs' == request()->path() ? 'active_link' : '' }}">
+                        <a class="nav-link" href="aboutUs">About Us</a>
                     </li>
                     <li class="nav-item {{ 'contact' == request()->path() ? 'active_link' : '' }}">
                         <a class="nav-link" href="#">Contact Us</a>
@@ -60,9 +65,8 @@
                 $("nav img").removeClass("scrollNavImg");
             }
         });
-
     </script>
-    
+
 </body>
 
 </html>

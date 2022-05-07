@@ -34,4 +34,8 @@ class PageController extends Controller
 
         return view('pages.myAccount', compact('tenant', 'mytime', 'unit', 'location', 'bills', 'billsUnpaid', 'payments'));
     }
+
+    public function aboutUs(){
+        return view('pages.aboutUs');
+    }
 }

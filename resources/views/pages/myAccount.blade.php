@@ -7,7 +7,7 @@
             <span>
                 <img src="img/icon/myAccount.png" alt="myAccount" height="55">
             </span>
-            <h1 class="mx-3">My Account</h1>
+            <h1 class="mx-3 paytone-font">My Account</h1>
         </div>
 
         <span class="">Date: <strong
@@ -23,10 +23,11 @@
                         aria-orientation="vertical">
                         <a class="nav-link active" id="v-tabs-home-tab" data-mdb-toggle="tab" href="#v-tabs-home" role="tab"
                             aria-controls="v-tabs-home" aria-selected="true">Overview</a>
-                        <a class="nav-link" id="v-tabs-bill-tab" data-mdb-toggle="tab" href="#v-tabs-bill" role="tab"
-                            aria-controls="v-tabs-bill" aria-selected="true">Bills
+                        <a class="nav-link d-flex " id="v-tabs-bill-tab" data-mdb-toggle="tab" href="#v-tabs-bill"
+                            role="tab" aria-controls="v-tabs-bill" aria-selected="true" style="cursor:pointer;">
+                            <p class="flex-grow-1 mb-0" style="padding-left: 1.6rem;">Bills</p>
                             @if ($billsUnpaid > 0)
-                                <span class="badge bg-danger ms-2">{{ $billsUnpaid }}</span>
+                                <span class="badge bg-danger ms-2 float-right">{{ $billsUnpaid }}</span>
                             @endif
                         </a>
                         <a class="nav-link" id="v-tabs-pay-tab" data-mdb-toggle="tab" href="#v-tabs-pay" role="tab"
@@ -47,37 +48,37 @@
                         aria-labelledby="v-tabs-account-tab">
                         <section>
                             <header>
-                                <h3 class="ps-3 py-1" style="color:#8c01af;">Account Overview</h3>
+                                <h3 class="ps-3 py-1 koulen-font" style="color:#8c01af;">Account Overview</h3>
                                 <hr>
                             </header>
                             <div class="tab-body">
                                 <div class="row">
                                     <div class="col-md-6">
                                         <label for="" class="text-muted">Account Name:</label>
-                                        <h5 class="text-uppercase text-secondary">{{ $tenant->firstname }}
+                                        <h5 class="text-uppercase text-secondary fw-bolder nunito-font">{{ $tenant->firstname }}
                                             {{ $tenant->lastname }}</h5>
                                     </div>
                                     <div class="col-md-6">
                                         <label for="" class="text-muted">Account Number:</label>
-                                        <h5 class="text-uppercase text-secondary">{{ $tenant->identity_id }}</h5>
+                                        <h5 class="text-uppercase text-secondary fw-bolder nunito-font">{{ $tenant->identity_id }}</h5>
                                     </div>
                                     <div class="col-md-6">
                                         <label for="" class="text-muted">Email Address:</label>
-                                        <h5 class=" text-secondary">{{ $tenant->email }}</h5>
+                                        <h5 class=" text-secondary fw-bolder nunito-font">{{ $tenant->email }}</h5>
                                     </div>
                                     <div class="col-md-6">
                                         <label for="" class="text-muted">Account Status:</label>
                                         <h5 class=""><span
-                                                class="badge badge-secondary status text-secondary px-4 py-2 ">{{ switchStatus($tenant->status) }}</span>
+                                                class="badge badge-secondary status text-secondary px-4 py-2 fw-bolder nunito-font">{{ switchStatus($tenant->status) }}</span>
                                         </h5>
                                     </div>
                                     <div class="col-md-6">
                                         <label for="" class="text-muted">Location:</label>
-                                        <h5 class=" text-secondary">{{ $location->location }}</h5>
+                                        <h5 class=" text-secondary fw-bolder nunito-font">{{ $location->location }}</h5>
                                     </div>
                                     <div class="col-md-6">
                                         <label for="" class="text-muted">Unit:</label>
-                                        <h5 class=" text-secondary">{{ $unit->name }}</h5>
+                                        <h5 class=" text-secondary fw-bolder nunito-font">{{ $unit->name }}</h5>
                                     </div>
                                 </div>
 
@@ -85,12 +86,12 @@
                                 <div class="row">
                                     <div class="col-md-6">
                                         <label for="" class="text-muted">Date Started:</label>
-                                        <h5 class="start-date text-secondary">
+                                        <h5 class="start-date text-secondary fw-bolder nunito-font">
                                             {{ \Carbon\Carbon::parse($tenant->start_date)->format('F j, Y') }}</h5>
                                     </div>
                                     <div class="col-md-6">
                                         <label for="" class="text-muted">Ending Date:</label>
-                                        <h5 class="end-date text-secondary">
+                                        <h5 class="end-date text-secondary fw-bolder nunito-font">
                                             {{ \Carbon\Carbon::parse($tenant->due_date)->format('F j, Y') }}</h5>
                                     </div>
                                 </div>
@@ -102,7 +103,7 @@
                     <div class="tab-pane fade" id="v-tabs-bill" role="tabpanel" aria-labelledby="v-tabs-bill-tab">
                         <section>
                             <header>
-                                <h3 class="ps-3 py-2" style="color:#8c01af;">Bills</h3>
+                                <h3 class="ps-3 py-2 koulen-font" style="color:#8c01af;">Bills</h3>
                                 <hr>
                             </header>
                             <div class="tab-body">
@@ -120,7 +121,8 @@
                                             <tr>
                                                 <td>{{ $bill->bill_type }}</td>
                                                 <td>{{ $bill->amount_balance }}</td>
-                                                <td>{{ $bill->created_at }} - {{ $bill->due_date }}</td>
+                                                <td>{{ \Carbon\Carbon::parse($bill->created_at)->format('F j, Y') }} -
+                                                    {{ \Carbon\Carbon::parse($bill->due_date)->format('F j, Y') }}</td>
                                                 <td class="h5"><span
                                                         class="badge rounded-pill badge-secondary px-3 py-2 text-uppercase">{{ switchStatus($bill->status) }}</span>
                                                 </td>
@@ -140,28 +142,24 @@
                     <div class="tab-pane fade" id="v-tabs-pay" role="tabpanel" aria-labelledby="v-tabs-pay-tab">
                         <section>
                             <header>
-                                <h3 class="ps-3 py-2" style="color:#8c01af;">Payments</h3>
+                                <h3 class="ps-3 py-2 koulen-font" style="color:#8c01af;">Payments</h3>
                                 <hr>
                             </header>
                             <div class="tab-body">
                                 <table class="table align-items-center table-hover" id="table-content">
                                     <thead class="bg-light">
                                         <tr>
-                                            <th>ID</th>
-                                            <th>Tenant</th>
-                                            <th>Billing period</th>
-                                            <th>Status</th>
+                                            <th>Reference #</th>
+                                            <th>Amount</th>
+                                            <th>Receiver</th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         @forelse ($payments as $payment)
                                             <tr>
-                                                <td>{{ $payment->tenant_id }}</td>
+                                                <td>{{ $payment->reference_id }}</td>
                                                 <td>{{ $payment->amount }}</td>
-                                                <td>{{ $payment->created_at }}</td>
-                                                <td class="h5"><span
-                                                        class="badge rounded-pill badge-secondary px-3 py-2 text-uppercase">{{ switchStatus($payment->status) }}</span>
-                                                </td>
+                                                <td>{{ $payment->receiver_id }}</td>
                                             </tr>
 
                                         @empty
@@ -178,7 +176,7 @@
                     <div class="tab-pane fade" id="v-tabs-cPass" role="tabpanel" aria-labelledby="v-tabs-profile-tab">
                         <section>
                             <header>
-                                <h3 class="ps-3 py-2" style="color:#8c01af;">Change Password</h3>
+                                <h3 class="ps-3 py-2 koulen-font" style="color:#8c01af;">Change Password</h3>
                                 <hr>
                             </header>
                             <div class="tab-body">
@@ -197,8 +195,7 @@
                                     <span class="txt_error text-danger mx-1 newPassword_error"></span>
 
                                     <div class="form-outline mt-1">
-                                        <input type="password" id="confirmPass" name="confirmPass"
-                                            class="form-control" />
+                                        <input type="password" id="confirmPass" name="confirmPass" class="form-control" />
                                         <label class="form-label" for="confirmPass">Confirm Password</label>
                                     </div>
                                     <span class="txt_error text-danger mx-1 confirmPass_error"></span>
@@ -227,34 +224,39 @@
         </div>
     </div>
 
-    <!-- Button trigger modal -->
-<button type="button" class="btn btn-primary" data-mdb-toggle="modal" data-mdb-target="#exampleModal">
-    Launch demo modal
-  </button>
-  
-  <!-- Modal -->
-  <div class="modal top fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" data-mdb-backdrop="true" data-mdb-keyboard="true">
-    <div class="modal-dialog  ">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-          <button type="button" class="btn-close" data-mdb-dismiss="modal" aria-label="Close"></button>
+    <!-- Change pass Success -->
+    <div class="modal top fade" id="cPasslogout" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true"
+        data-mdb-backdrop="static" data-mdb-keyboard="false">
+        <div class="modal-dialog  ">
+            <div class="modal-content">
+                <div class="modal-header bg-warning">
+                    <h5 class="modal-title"><i class="fas fa-exclamation"></i> Notice</h5>
+                </div>
+                <div class="modal-body">
+                    <h3>You have Successfully changed your password.</h3>
+                    <h3 class="d-flex">Automatic logout in: <div class="countdown px-2">5</div>s</h3>
+                </div>
+                <div class="modal-footer">
+                    <a href="logout">
+                        <button type="button" class="btn btn-primary">logout now</button>
+                    </a>
+                </div>
+            </div>
         </div>
-        <div class="modal-body">...</div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-mdb-dismiss="modal">
-            Close
-          </button>
-          <button type="button" class="btn btn-primary">Save changes</button>
-        </div>
-      </div>
     </div>
-  </div>
 @endsection
 
 @section('javascript')
     <script>
         $(function() {
+            var doUpdate = function() {
+                $('.countdown').each(function() {
+                    var count = parseInt($(this).html());
+                    if (count !== 0) {
+                        $(this).html(count - 1);
+                    }
+                });
+            };
             $('#updatePass-form').on('submit', function(e) {
                 e.preventDefault();
                 $.ajax({
@@ -267,8 +269,14 @@
                     },
                     success: function(data) {
                         if (data.status) {
-                            console.log('success')
+                            //automatic logout
+                            $('#cPasslogout').modal('toggle');
+                            setInterval(doUpdate, 1000);
+                            setTimeout(function() {
+                                window.location = 'logout';
+                            }, 5000);
                         } else {
+                            //show validation
                             $.each(data.error, function(key, val) {
                                 $('span.' + key + '_error').text(val[0]);
                                 console.log(key + ':' + val);

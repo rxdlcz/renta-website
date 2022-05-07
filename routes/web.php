@@ -30,6 +30,7 @@ Route::group(['middleware' => 'prevent-back-history'], function () {
 
         Route::get('/home', [PageController::class, 'home']);
         Route::get('/myAccount', [PageController::class, 'myAccount']);
+        Route::get('/aboutUs', [PageController::class, 'aboutUs']);
         Route::post('/updatePass', [AuthController::class, 'updatePass']);
     });
 });

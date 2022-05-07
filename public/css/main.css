@@ -1,3 +1,12 @@
+.paytone-font{
+    font-family: 'Paytone One', sans-serif;
+}
+.koulen-font{
+    font-family: 'Koulen', cursive;
+}
+.nunito-font{
+    font-family: 'Nunito', sans-serif;
+}
 .tab-body .row div{
     padding-block: 0.5rem;
 }
