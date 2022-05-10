@@ -15,8 +15,9 @@ class PageController extends Controller
 {
     public function home(){
         $tenants = tenant::get();
+        $locations = location::get();
 
-        return view('pages.home', compact('tenants'));
+        return view('pages.home', compact('tenants', 'locations'));
     }
 
     public function myAccount(){

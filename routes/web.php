@@ -18,7 +18,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::group(['middleware' => 'prevent-back-history'], function () {
 
-    Route::get('/', function () {
+    Route::get('/login', function () {
         return view('auth.login');
     })->middleware('alreadyLoggedIn');
 
@@ -26,11 +26,14 @@ Route::group(['middleware' => 'prevent-back-history'], function () {
     Route::get('/logout', [AuthController::class, 'logout']);
 
 
+    Route::get('/', [PageController::class, 'home']);
+    Route::get('/aboutUs', [PageController::class, 'aboutUs']);
+
     Route::group(['middleware' => 'isLoggedIn'], function () {
 
-        Route::get('/home', [PageController::class, 'home']);
+
         Route::get('/myAccount', [PageController::class, 'myAccount']);
-        Route::get('/aboutUs', [PageController::class, 'aboutUs']);
+
         Route::post('/updatePass', [AuthController::class, 'updatePass']);
     });
 });

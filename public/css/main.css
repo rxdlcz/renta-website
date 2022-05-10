@@ -1,17 +1,34 @@
-.paytone-font{
+.paytone-font {
     font-family: 'Paytone One', sans-serif;
 }
-.koulen-font{
+
+.koulen-font {
     font-family: 'Koulen', cursive;
 }
-.nunito-font{
+
+.nunito-font {
     font-family: 'Nunito', sans-serif;
 }
-.tab-body .row div{
+
+.tab-body .row div {
     padding-block: 0.5rem;
 }
 
-.nav-tabs a{
+.nav-tabs a {
     font-size: .8rem !important;
     font-weight: 700 !important;
+}
+
+.tab-header {
+    color: #8c01af;
+    background: #ebebeb;
+}
+
+.location-content{
+    opacity: 0;
+}
+
+.show{
+    opacity: 1!important;
+    transition: ease 1.5s;
 }
