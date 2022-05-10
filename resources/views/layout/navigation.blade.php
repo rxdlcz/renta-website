@@ -9,6 +9,7 @@
     <title>Renta - @yield('title')</title>
     <link rel="stylesheet" href="css/nav-style.css">
     <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/font.css">
 
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
@@ -17,9 +18,7 @@
     
 
     <style>
-        /* @import url('https://fonts.googleapis.com/css2?family=Koulen&family=Paytone+One&display=swap'); */
-        @import url('https://fonts.googleapis.com/css2?family=Koulen&family=Nunito:wght@300&family=Paytone+One&display=swap');
-
+        @import url('https://fonts.googleapis.com/css2?family=Koulen&family=Nunito:wght@700&family=Paytone+One&family=Poppins&display=swap');
     </style>
 
 </head>
@@ -101,6 +100,7 @@
     <script src="js/mdb.min.js"></script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.flipster/1.1.5/jquery.flipster.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/ScrollMagic.min.js"></script>
 
     @yield('javascript')
     <script>
