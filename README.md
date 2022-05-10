@@ -67,10 +67,9 @@ You can now access the server at http://localhost:8000
     php artisan serve
 
 
-**Default User**
-
-    Username: admin
-    Password: password
+**User will created from Renta CRM**
+    
+    Create user/tenant in CRM Renta 
     
 # Creator
  Created by: Rex Delacruz
