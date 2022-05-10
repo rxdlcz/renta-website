@@ -70,6 +70,7 @@ You can now access the server at http://localhost:8000
 **User will created from Renta CRM**
     
     Create user/tenant in CRM Renta 
+    CRM Renta will send Temporary credentials to user registered Email
     
 # Creator
  Created by: Rex Delacruz
