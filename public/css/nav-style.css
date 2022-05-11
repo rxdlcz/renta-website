@@ -20,8 +20,8 @@
     margin-top: -2rem;
   }
 
-  main{
-    margin-top: 250px;
+  .coverflow-wrapper, .myacct-wrapper{
+    padding-top: 250px;
   }
 }
 
@@ -29,8 +29,8 @@
   header nav img{
     height: 50px !important;
   }
-  main{
-    margin-top: 100px;
+  .coverflow-wrapper, .myacct-wrapper{
+    padding-top: 100px !important;
   }
 }
 
