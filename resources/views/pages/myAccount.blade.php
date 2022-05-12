@@ -46,7 +46,7 @@
                     <div class="col-md-9 border-start ps-4">
                         <!-- Tab content -->
                         <div class="tab-content mt-3" id="v-tabs-tabContent">
-                            <div class="tab-pane fade show active" id="v-tabs-home" role="tabpanel"
+                            <div class="tab-pane fade show show-animation-slideLeft active" id="v-tabs-home" role="tabpanel"
                                 aria-labelledby="v-tabs-account-tab">
                                 <section>
                                     <header>
@@ -112,7 +112,7 @@
                                 </section>
 
                             </div>
-                            <div class="tab-pane fade" id="v-tabs-bill" role="tabpanel" aria-labelledby="v-tabs-bill-tab">
+                            <div class="tab-pane fade show-animation-slideLeft" id="v-tabs-bill" role="tabpanel" aria-labelledby="v-tabs-bill-tab">
                                 <section>
                                     <header>
                                         <h3 class="ps-3 py-2 koulen-font tab-header">Bills</h3>
@@ -153,7 +153,7 @@
 
                                 </section>
                             </div>
-                            <div class="tab-pane fade" id="v-tabs-pay" role="tabpanel" aria-labelledby="v-tabs-pay-tab">
+                            <div class="tab-pane fade show-animation-slideLeft" id="v-tabs-pay" role="tabpanel" aria-labelledby="v-tabs-pay-tab">
                                 <section>
                                     <header>
                                         <h3 class="ps-3 py-2 koulen-font tab-header">Payments</h3>
@@ -190,7 +190,7 @@
 
                                 </section>
                             </div>
-                            <div class="tab-pane fade" id="v-tabs-cPass" role="tabpanel"
+                            <div class="tab-pane fade show-animation-slideLeft" id="v-tabs-cPass" role="tabpanel"
                                 aria-labelledby="v-tabs-profile-tab">
                                 <section>
                                     <header>

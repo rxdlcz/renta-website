@@ -1,3 +1,21 @@
+.background-parallax {
+    /* The image used */
+    background-image: url("/img/background/building.png");
+
+    /* Set a specific height */
+    min-height: 500px;
+
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.coverflow-wrapper {
+    backdrop-filter: blur(3px);
+}
+
 .tab-body .row div {
     padding-block: 0.5rem;
 }
@@ -16,22 +34,28 @@
     opacity: 0;
 }
 
-.cluster-section{
-    opacity: 0;
+.cluster-section {
+    display: none;
+    opacity: 1;
     transition: ease 1.5s;
 }
-.hidden-block{
+
+.cluster {
     display: none;
 }
 
-.show-block{
-    display: block;
-    opacity: 1;
+.locationNav-wrapper{
+    background-color: #efeaea;
 }
 
-.show {
-    opacity: 1 !important;
-    transition: ease-out 1.5s;
+.btn.viewAll-btn:hover{
+    transition: ease 0.8s;
+    background-color: #f93154;
+    color: white;
+}
+
+.more-card{
+    display: none;
 }
 
 #btn-back-to-top {
@@ -41,6 +65,7 @@
     display: none;
 }
 
+/* Border Shape Separator */
 .border-shape {
     background: #09be51 none repeat scroll 0 0;
     color: #fff;
@@ -81,20 +106,4 @@
     width: 100px;
 }
 
-.background-parallax{
-    /* The image used */
-    background-image: url("https://images.unsplash.com/photo-1582407947304-fd86f028f716?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1596&q=80");
-  
-    /* Set a specific height */
-    min-height: 500px; 
-    
-    /* Create the parallax scrolling effect */
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-  }
-
-  .coverflow-wrapper{
-    backdrop-filter: blur(3px);
-  }
+/*End Border Shape Separator */

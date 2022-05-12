@@ -10,23 +10,25 @@
     <link rel="stylesheet" href="css/nav-style.css">
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/font.css">
+    <link rel="stylesheet" href="css/animation.css">
 
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="css/mdb.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery.flipster/1.1.5/jquery.flipster.css">
-    
+
 
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Koulen&family=Nunito:wght@700&family=Paytone+One&family=Poppins&display=swap');
+
     </style>
 
 </head>
 
 <body>
-    <header class="fixed-top ">
+    <header class="fixed-top show">
         <nav class="navbar navbar-expand-lg navbar-light px-3">
-            <a class="navbar-brand p-0" href="#"><img src="img/logo.png" class="img-logo"></a>
+            <a class="navbar-brand p-0 show-delay" href="#"><img src="img/logo.png" class="img-logo"></a>
             <button class="navbar-toggler collapsed" type="button" data-mdb-toggle="collapse" data-mdb-target="#navBar"
                 aria-controls="navBar" aria-expanded="false" aria-label="Toggle navigation">
                 <i class="fas fa-bars"></i>
@@ -52,7 +54,7 @@
 
     <main>
         @yield('content')
-        <div style="height:10vw;"></div>
+        
     </main>
 
     <footer class="bg-light text-center text-white mt-5 ">
@@ -64,10 +66,6 @@
                 <a class="btn btn-primary btn-floating m-1" style="background-color: #3b5998;" href="#!"
                     role="button"><i class="fab fa-facebook-f"></i></a>
 
-                <!-- Twitter -->
-                <a class="btn btn-primary btn-floating m-1" style="background-color: #55acee;" href="#!"
-                    role="button"><i class="fab fa-twitter"></i></a>
-
                 <!-- Google -->
                 <a class="btn btn-primary btn-floating m-1" style="background-color: #dd4b39;" href="#!"
                     role="button"><i class="fab fa-google"></i></a>
@@ -76,12 +74,19 @@
                 <a class="btn btn-primary btn-floating m-1" style="background-color: #ac2bac;" href="#!"
                     role="button"><i class="fab fa-instagram"></i></a>
 
-                <!-- Linkedin -->
-                <a class="btn btn-primary btn-floating m-1" style="background-color: #0082ca;" href="#!"
-                    role="button"><i class="fab fa-linkedin-in"></i></a>
-                <!-- Github -->
+                
+               {{--  <!-- Github -->
                 <a class="btn btn-primary btn-floating m-1" style="background-color: #333333;" href="#!"
                     role="button"><i class="fab fa-github"></i></a>
+
+                <!-- Linkedin -->
+                <a class="btn btn-primary btn-floating m-1" style="background-color: #0082ca;" href="#!"
+                    role="button"><i class="fab fa-linkedin-in"></i></a>    
+
+                <!-- Twitter -->
+                <a class="btn btn-primary btn-floating m-1" style="background-color: #55acee;" href="#!"
+                    role="button"><i class="fab fa-twitter"></i></a> --}}
+                    
             </section>
             <!-- Section: Social media -->
         </div>
@@ -89,8 +94,8 @@
 
         <!-- Copyright -->
         <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
-            © 2020 Copyright:
-            <a class="text-white" href="https://mdbootstrap.com/">MDBootstrap.com</a>
+            © 2022 Copyright:
+            <a class="text-white" href="https://mdbootstrap.com/">Renta.com</a>
         </div>
         <!-- Copyright -->
     </footer>

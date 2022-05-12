@@ -39,7 +39,7 @@
                                             </p>
                                         </div>
                                         <div class="card-footer">
-                                            <a href="#cluster-{{ $loop->index }}">
+                                            <a href="#cluster-{{ $loop->index }}" class="scroll-link">
                                                 <button type="button" class="btn btn-outline-info"
                                                     data-mdb-ripple-color="dark">See
                                                     listing
@@ -58,45 +58,77 @@
 
     <div class="container-fluid">
         @foreach ($locations as $location)
-            <section class="py-5 cluster-section {{ $loop->index == 0 ? 'show-block' : 'hidden-block' }}"
+            <section class="py-5 cluster-section" {{ $loop->index == 0 ? 'style=opacity:1;display:block;' : '' }}
                 id="cluster-{{ $loop->index }}">
                 <div class="content-header cHeader{{ $loop->index }}">
                     <div class="text-center">
                         <h1 class="mx-3 paytone-font text-uppercase">{{ $location->location }}</h1>
                         <span class="nunito-font">Available Room For You.</span>
                         <div class="border-shape"></div>
-                        @foreach ($locations as $locationNav)
-                            <a href="#cluster-{{ $loop->index }}">
-                                <button type="button" class="btn btn-primary">{{ $locationNav->location }}</button>
-                            </a>   
-                        @endforeach
+                        <div class="container locationNav-wrapper py-3 px-4 rounded-pill my-3">
+                            @foreach ($locations as $locationNav)
+                                <a href="#cluster-{{ $loop->index }}" class="scroll-link">
+                                    <button type="button"
+                                        class="btn btn-info m-1 btn-rounded">{{ $locationNav->location }}</button>
+                                </a>
+                            @endforeach
+                        </div>
                     </div>
                 </div>
-                <div class="container px-5 cluster cBody{{ $loop->index }}">
-                    <div class="row justify-content-center px-5">
+                <div class="container px-5 cluster cBody{{ $loop->index }}"
+                    {{ $loop->index == 0 ? 'style=display:block;' : '' }}>
+                    <div class=" row justify-content-center px-5">
                         @foreach ($units as $unit)
                             @if ($location->id == $unit->location_id)
-                                <div class="col-md-4 unit-card">
-                                    <div class="card mt-2">
-                                        <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
-                                            <img src="https://mdbootstrap.com/img/new/standard/nature/111.webp"
-                                                class="img-fluid" />
-                                            <a>
-                                                <div class="mask"
-                                                    style="background-color: rgba(251, 251, 251, 0.15)">
-                                                </div>
-                                            </a>
-                                        </div>
-                                        <div class="card-body poppins-font">
-                                            <h5 class="card-title text-capitalize fw-bold">Unit {{ $unit->name }}</h5>
-                                            <p class="card-text">
-                                                Some quick example text to build on the card title and make up the bulk of
-                                                the
-                                                card's content.
-                                            </p>
+                                @if ($loop->index < 4)
+                                    <div class="col-md-4 unit-card">
+                                        <div class="card mt-2">
+                                            <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
+                                                <img src="https://mdbootstrap.com/img/new/standard/nature/111.webp"
+                                                    class="img-fluid" />
+                                                <a>
+                                                    <div class="mask"
+                                                        style="background-color: rgba(251, 251, 251, 0.15)">
+                                                    </div>
+                                                </a>
+                                            </div>
+                                            <div class="card-body poppins-font">
+                                                <h5 class="card-title text-capitalize fw-bold">Unit {{ $unit->name }}
+                                                </h5>
+                                                <p class="card-text">
+                                                    Some quick example text to build on the card title and make up the bulk
+                                                    of
+                                                    the
+                                                    card's content.
+                                                </p>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
+                                @else
+                                    <div class="col-md-4 unit-card more-card">
+                                        <div class="card mt-2">
+                                            <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
+                                                <img src="https://mdbootstrap.com/img/new/standard/nature/111.webp"
+                                                    class="img-fluid" />
+                                                <a>
+                                                    <div class="mask"
+                                                        style="background-color: rgba(251, 251, 251, 0.15)">
+                                                    </div>
+                                                </a>
+                                            </div>
+                                            <div class="card-body poppins-font">
+                                                <h5 class="card-title text-capitalize fw-bold">Unit {{ $unit->name }}
+                                                </h5>
+                                                <p class="card-text">
+                                                    Some quick example text to build on the card title and make up the bulk
+                                                    of
+                                                    the
+                                                    card's content.
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                @endif
                             @endif
                         @endforeach
                         <span class="no-unit d-none text-center bg-light pt-3 poppins-font" style="height:5rem;">Sorry
@@ -104,14 +136,14 @@
                     </div>
                 </div>
                 <div class="footer text-center mt-5 cFooter{{ $loop->index }}">
-                    <button type="button" class="btn btn-primary">View More..</button>
+                    <a href="#cluster-{{ $loop->index }}" class="viewAll-link">
+                        <button type="button" class="btn btn-outline-danger py-4 px-5 fw-bold viewAll-btn"
+                            data-mdb-ripple-color="dark">view all</button>
+                    </a>
                 </div>
             </section>
         @endforeach
     </div>
-
-
-
 
     <button type="button" class="btn btn-danger btn-floating btn-lg" id="btn-back-to-top">
         <i class="fas fa-arrow-up"></i>
@@ -122,7 +154,7 @@
 
     <script>
         $(document).ready(function() {
-            $('.location-content').addClass("show")
+            $('.location-content').addClass("show-animation-slideDown")
         });
 
         //featured location coverflow initialize
@@ -140,7 +172,7 @@
         });
 
         //scroll to location cluster
-        $("a").on('click', function(event) {
+        $('.scroll-link').on('click', function(event) {
 
             if (this.hash !== "") {
                 event.preventDefault();
@@ -157,14 +189,16 @@
                     noUnit.addClass('d-block');
                 }
 
-
+                //Show animation
                 $('.cluster-section').each(function() {
-                    $(this).removeClass('show-block');
-                    $(this).addClass('hidden-block');
+                    $('.cluster-section').removeAttr('style');
+                    $('.cluster-section .cluster').removeAttr('style');
                 });
+                $(hash).show();
 
-                $(hash).addClass('show-block');
-                $(hash).removeClass('hidden-block');
+                $(hash + ' .cluster').fadeIn();
+
+                //Scroll to Unit cluster
                 if ($('.fixed-top').height() > 150) {
                     $('html, body').animate({
                         scrollTop: $(hash).offset().top - 100
@@ -177,55 +211,36 @@
             }
         });
 
-        //Get the button
-        let mybutton = document.getElementById("btn-back-to-top");
+        $('.viewAll-link').click('click', function(e) {
+            event.preventDefault();
+            var hash = this.hash;
 
-        // When the user scrolls down 20px from the top of the document, show the button
-        window.onscroll = function() {
-            scrollFunction();
-        };
+            $(hash + ' .cluster .row .more-card').each(function(index) {
+                $(hash + ' .cluster .row .more-card').slideToggle(function() {
+                    if ($(this).is(':visible')) {
+                        $('.btn.viewAll-btn').text('view less')
+                    } else {
+                        $('.btn.viewAll-btn').text('view all')
+                    }
+                });
+            });
+        });
 
-        function scrollFunction() {
-            if (
-                document.body.scrollTop > 500 ||
-                document.documentElement.scrollTop > 500
-            ) {
-                mybutton.style.display = "block";
+        //Scroll to Top function
+        $(window).scroll(function() {
+
+            if ($(this).scrollTop() > 600) {
+                $("#btn-back-to-top").fadeIn();
             } else {
-                mybutton.style.display = "none";
+                $("#btn-back-to-top").fadeOut();
             }
-        }
-        // When the user clicks on the button, scroll to the top of the document
-        mybutton.addEventListener("click", backToTop);
-
-        function backToTop() {
-            document.body.scrollTop = 0;
-            document.documentElement.scrollTop = 0;
-        }
-
-        /* $("#coverflow li").each(function(index) {
-            var controller = new ScrollMagic.Controller();
-            var headerScene = new ScrollMagic.Scene({
-                    offset: -400,
-                    triggerElement: '.cHeader' + index
-                })
-                .setClassToggle('.cHeader' + index, 'show')
-                .addTo(controller);
-
-            var headerScene = new ScrollMagic.Scene({
-                    offset: -400,
-                    triggerElement: '.cBody' + index
-                })
-                .setClassToggle('.cBody' + index, 'show')
-                .addTo(controller);
-
-            var headerScene = new ScrollMagic.Scene({
-                    offset: -450,
-                    triggerElement: '.cFooter' + index
-                })
-                .setClassToggle('.cFooter' + index, 'show')
-                .addTo(controller);
-        }); */
+        });
+        $("#btn-back-to-top").click(function() {
+            $("html, body").animate({
+                scrollTop: 0
+            }, 600);
+            return false;
+        });
     </script>
 
 @endsection
