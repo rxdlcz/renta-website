@@ -3,6 +3,7 @@
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
+use Illuminate\Support\Collection;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -14,6 +15,11 @@ class AppServiceProvider extends ServiceProvider
     public function register()
     {
         //
+        Collection::macro('byUnit', function ($location) {
+            return $this->filter(function ($value) use ($location) {
+                return $value->location_id == $location;
+            });
+        });
     }
 
     /**
