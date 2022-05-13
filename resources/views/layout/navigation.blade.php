@@ -38,8 +38,8 @@
                     <li class="nav-item {{ 'aboutUs' == request()->path() ? 'active_link' : '' }}">
                         <a class="nav-link" href="aboutUs">About Us</a>
                     </li>
-                    <li class="nav-item {{ 'contact' == request()->path() ? 'active_link' : '' }}">
-                        <a class="nav-link" href="#">Contact Us</a>
+                    <li class="nav-item {{ 'contactUs' == request()->path() ? 'active_link' : '' }}">
+                        <a class="nav-link" href="contactUs">Contact Us</a>
                     </li>
                 </ul>
             </div>

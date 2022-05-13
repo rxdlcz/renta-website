@@ -28,12 +28,10 @@ Route::group(['middleware' => 'prevent-back-history'], function () {
 
     Route::get('/', [PageController::class, 'home']);
     Route::get('/aboutUs', [PageController::class, 'aboutUs']);
+    Route::get('/contactUs', [PageController::class, 'contactUs']);
 
     Route::group(['middleware' => 'isLoggedIn'], function () {
-
-
         Route::get('/myAccount', [PageController::class, 'myAccount']);
-
         Route::post('/updatePass', [AuthController::class, 'updatePass']);
     });
 });

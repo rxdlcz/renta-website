@@ -141,36 +141,33 @@
         @endforeach
     </div>
 
-    <div class="mt-5" style="height: 500px;">
-        <div class="mb-5" style="height:330px; background:#1d2023; position:relative">
-            <div class="space-top" style="height: 2vw"></div>
+    <div class="mt-5 bookNow-container">
+        <div class="mb-5 back-color">
+            <div class="space-top"></div>
             <div class="contactHeader text-center">
-                <h1 class="pt-5 text-white satisfy-font" style="font-size: 5rem;">Book Now</h1>
-                <span class="nunito-font h5" style="color: #ffa752;">Submit Your Room and Email</span>
+                <h1 class="pt-5 text-white satisfy-font">Book Now</h1>
+                <span class="nunito-font h5">Choose Your Room and Submit</span>
             </div>
-            <div class="container p-5">
-                <div class="container bg-success d-flex align-items-center justify-content-center" style="height: 150px;">
+            <div class="container body-content p-5">
+                <div class="container bg-light d-flex align-items-center justify-content-center px-5 shadow-5">
                     <form action="">
                         <div class="row">
-                            <div class="col-md-3 py-2">
-                                <div class="form-outline">
-                                    <input type="text" name="location" id="location-input" class="form-control form-control-lg bg-light" value="san jose" readonly/>
-                                    <label class="form-label nunito-font text-primary">Location</label>
-                                </div>
+                            <div class="col-md-3">
+                                <label class="form-label nunito-font text-dark ps-2">Location</label>
+                                <input type="text" name="location" id="location-input"
+                                    class="form-control form-control-lg bg-light" value="Choose Location" readonly />
                             </div>
-                            <div class="col-md-3 py-2">
-                                <div class="form-outline">
-                                    <input type="text" name="unit" id="unit-input" class="form-control form-control-lg bg-light" value="Choose Unit" readonly />
-                                    <label class="form-label nunito-font text-primary">Unit</label>
-                                </div>
+                            <div class="col-md-3">
+                                <label class="form-label nunito-font text-dark ps-2">Unit</label>
+                                <input type="text" name="unit" id="unit-input" class="form-control form-control-lg bg-light"
+                                    value="Choose Unit" readonly />
                             </div>
-                            <div class="col-md-4 py-2">
-                                <div class="form-outline">
-                                    <input type="email" name="email"class="form-control form-control-lg bg-light" required/>
-                                    <label class="form-label nunito-font text-primary">Email</label>
-                                </div>
+                            <div class="col-md-4">
+                                <label class="form-label nunito-font text-dark ps-2">Email</label>
+                                <input type="email" name="email" class="form-control form-control-lg bg-light" required />
+
                             </div>
-                            <div class="col-md-2 py-2">
+                            <div class="col-md-2 d-flex align-content-end flex-wrap">
                                 <button class="contact100-form-btn nunito-font">
                                     <span>
                                         Submit
