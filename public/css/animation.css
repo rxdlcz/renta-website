@@ -1,54 +1,96 @@
-.show-animation-slideDown{
+.show-animation-slideDown {
     animation: slide-down 500ms;
     opacity: 1;
 }
+
 .show-animation-slideUp {
     opacity: 1 !important;
     animation: slide-up 500ms;
 }
 
-.show-animation-slideLeft{
+.show-animation-slideLeft {
     overflow: hidden;
     animation: width-slide-left 800ms;
 }
 
 .show-delay {
     opacity: 1 !important;
-    animation: slide-down 1000ms;
+    animation: slide-down 1000ms, fade 1500ms;
+}
+
+.show-animation-fade{
+    animation: fade 500ms;
+}
+
+@keyframes fade {
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
 }
 
 @keyframes slide-up {
-    0%{
+    0% {
         transform: translateY(100%);
     }
-    100%{
+
+    100% {
         transform: translateY(0%);
     }
-  }
+}
 
-  @keyframes slide-down {
-    0%{
+@keyframes slide-down {
+    0% {
         transform: translateY(-100%);
     }
-    100%{
+
+    100% {
         transform: translateY(0%);
     }
-  }
+}
 
-  @keyframes slide-left {
-    0%{
+@keyframes slide-left {
+    0% {
         transform: translateX(-100%);
     }
-    100%{
+
+    100% {
         transform: translateX(0%);
     }
-  }
-  
-  @keyframes width-slide-left {
-    0%{
+}
+
+@keyframes width-slide-left {
+    0% {
         width: 0%;
     }
-    100%{
+
+    100% {
         width: 100%;
     }
-  }
+}
+
+/* The typing effect */
+@keyframes typing {
+    from {
+        width: 0
+    }
+
+    to {
+        width: 100%
+    }
+}
+
+/* The typewriter cursor effect */
+@keyframes blink-caret {
+
+    from,
+    to {
+        border-color: transparent
+    }
+
+    50% {
+        border-color: aliceblue;
+    }
+}
