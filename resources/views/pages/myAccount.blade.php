@@ -23,20 +23,20 @@
                             <!-- Tab navs -->
                             <div class="nav flex-column nav-tabs text-center" id="v-tabs-tab" role="tablist"
                                 aria-orientation="vertical">
-                                <a class="nav-link active" id="v-tabs-home-tab" data-mdb-toggle="tab" href="#v-tabs-home"
+                                <a class="nav-link active bg-light mb-1" id="v-tabs-home-tab" data-mdb-toggle="tab" href="#v-tabs-home"
                                     role="tab" aria-controls="v-tabs-home" aria-selected="true">Overview</a>
-                                <a class="nav-link d-flex " id="v-tabs-bill-tab" data-mdb-toggle="tab" href="#v-tabs-bill"
+                                <a class="nav-link d-flex bg-light mb-1" id="v-tabs-bill-tab" data-mdb-toggle="tab" href="#v-tabs-bill"
                                     role="tab" aria-controls="v-tabs-bill" aria-selected="true" style="cursor:pointer;">
                                     <p class="flex-grow-1 mb-0" style="padding-left: 1.6rem;">Bills</p>
                                     @if ($billsUnpaid > 0)
                                         <span class="badge bg-danger ms-2 float-right">{{ $billsUnpaid }}</span>
                                     @endif
                                 </a>
-                                <a class="nav-link" id="v-tabs-pay-tab" data-mdb-toggle="tab" href="#v-tabs-pay"
+                                <a class="nav-link bg-light mb-1" id="v-tabs-pay-tab" data-mdb-toggle="tab" href="#v-tabs-pay"
                                     role="tab" aria-controls="v-tabs-pay" aria-selected="false">Payment</a>
-                                <a class="nav-link" id="v-tabs-cPass-tab" data-mdb-toggle="tab" href="#v-tabs-cPass"
+                                <a class="nav-link bg-light mb-1" id="v-tabs-cPass-tab" data-mdb-toggle="tab" href="#v-tabs-cPass"
                                     role="tab" aria-controls="v-tabs-cPass" aria-selected="false">Change Password</a>
-                                <a class="nav-link" href="/logout" role="tab" aria-controls="v-tabs-messages"
+                                <a class="nav-link bg-light mb-1" href="/logout" role="tab" aria-controls="v-tabs-messages"
                                     aria-selected="false">Logout</a>
                             </div>
                             <!-- Tab navs -->
@@ -258,6 +258,7 @@
             </div>
         </div>
     </div>
+    <div class="bg-light" style="height:10vw;"></div>
 @endsection
 
 @section('javascript')
