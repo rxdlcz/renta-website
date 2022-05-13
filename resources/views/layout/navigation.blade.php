@@ -17,12 +17,6 @@
     <link rel="stylesheet" href="css/mdb.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery.flipster/1.1.5/jquery.flipster.css">
 
-
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Koulen&family=Nunito:wght@700&family=Paytone+One&family=Poppins&display=swap');
-
-    </style>
-
 </head>
 
 <body>
@@ -52,12 +46,14 @@
         </nav>
     </header>
 
-    <main>
+    <main class="bg-light">
         @yield('content')
-        
+        <button type="button" class="btn btn-danger btn-floating btn-lg" id="btn-back-to-top">
+            <i class="fas fa-arrow-up"></i>
+        </button>
     </main>
 
-    <footer class="bg-light text-center text-white mt-5 ">
+    <footer class="text-center text-white" style="background: #ffd7d7;">    
         <!-- Grid container -->
         <div class="container p-4 pb-0">
             <!-- Section: Social media -->

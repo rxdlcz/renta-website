@@ -62,8 +62,8 @@
                 id="cluster-{{ $loop->index }}">
                 <div class="content-header cHeader{{ $loop->index }}">
                     <div class="text-center">
-                        <h1 class="mx-3 paytone-font text-uppercase">{{ $location->location }}</h1>
-                        <span class="nunito-font">Available Room For You.</span>
+                        <h1 class="mx-3 paytone-font text-uppercase location-name">{{ $location->location }}</h1>
+                        <span class="nunito-font text-muted">Available Room For You.</span>
                         <div class="border-shape"></div>
                         <div class="container locationNav-wrapper py-3 px-4 rounded-pill my-3">
                             @foreach ($locations as $locationNav)
@@ -78,57 +78,52 @@
                 <div class="container px-5 cluster cBody{{ $loop->index }}"
                     {{ $loop->index == 0 ? 'style=display:block;' : '' }}>
                     <div class=" row justify-content-center px-5">
-                        @foreach ($units as $unit)
-                            @if ($location->id == $unit->location_id)
-                                @if ($loop->index < 4)
-                                    <div class="col-md-4 unit-card">
-                                        <div class="card mt-2">
-                                            <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
-                                                <img src="https://mdbootstrap.com/img/new/standard/nature/111.webp"
-                                                    class="img-fluid" />
-                                                <a>
-                                                    <div class="mask"
-                                                        style="background-color: rgba(251, 251, 251, 0.15)">
-                                                    </div>
-                                                </a>
-                                            </div>
-                                            <div class="card-body poppins-font">
-                                                <h5 class="card-title text-capitalize fw-bold">Unit {{ $unit->name }}
-                                                </h5>
-                                                <p class="card-text">
-                                                    Some quick example text to build on the card title and make up the bulk
-                                                    of
-                                                    the
-                                                    card's content.
-                                                </p>
-                                            </div>
+                        @foreach ($units->byUnit($location->id) as $unit)
+                            @if ($loop->index < 3)
+                                <div class="col-md-4 unit-card">
+                                    <div class="card mt-3">
+                                        <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
+                                            <img src="https://mdbootstrap.com/img/new/standard/nature/111.webp"
+                                                class="img-fluid" />
+                                            <a>
+                                                <div class="mask"
+                                                    style="background-color: rgba(251, 251, 251, 0.15)">
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <div class="card-body poppins-font">
+                                            <h5 class="card-title text-capitalize fw-bold">Unit {{ $unit->name }}</h5>
+                                            <p class="card-text">
+                                                Some quick example text to build on the card title and make up the bulk
+                                                of
+                                                the
+                                                card's content.
+                                            </p>
                                         </div>
                                     </div>
-                                @else
-                                    <div class="col-md-4 unit-card more-card">
-                                        <div class="card mt-2">
-                                            <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
-                                                <img src="https://mdbootstrap.com/img/new/standard/nature/111.webp"
-                                                    class="img-fluid" />
-                                                <a>
-                                                    <div class="mask"
-                                                        style="background-color: rgba(251, 251, 251, 0.15)">
-                                                    </div>
-                                                </a>
-                                            </div>
-                                            <div class="card-body poppins-font">
-                                                <h5 class="card-title text-capitalize fw-bold">Unit {{ $unit->name }}
-                                                </h5>
-                                                <p class="card-text">
-                                                    Some quick example text to build on the card title and make up the bulk
-                                                    of
-                                                    the
-                                                    card's content.
-                                                </p>
-                                            </div>
+                                </div>
+                            @else
+                                <div class="col-md-4 more-card unit-card">
+                                    <div class="card mt-3">
+                                        <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
+                                            <img src="https://mdbootstrap.com/img/new/standard/nature/111.webp"
+                                                class="img-fluid" />
+                                            <a>
+                                                <div class="mask"
+                                                    style="background-color: rgba(251, 251, 251, 0.15)">
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <div class="card-body poppins-font">
+                                            <h5 class="card-title text-capitalize fw-bold">Unit {{ $unit->name }}
+                                            </h5>
+                                            <p class="card-text">
+                                                Some quick example text to build on the card title and make up the bulk of
+                                                the card's content.
+                                            </p>
                                         </div>
                                     </div>
-                                @endif
+                                </div>
                             @endif
                         @endforeach
                         <span class="no-unit d-none text-center bg-light pt-3 poppins-font" style="height:5rem;">Sorry
@@ -137,17 +132,60 @@
                 </div>
                 <div class="footer text-center mt-5 cFooter{{ $loop->index }}">
                     <a href="#cluster-{{ $loop->index }}" class="viewAll-link">
-                        <button type="button" class="btn btn-outline-danger py-4 px-5 fw-bold viewAll-btn"
-                            data-mdb-ripple-color="dark">view all</button>
+                        <button type="button" id="cluster-{{ $loop->index }}-btn"
+                            class="btn btn-outline-danger py-4 px-5 fw-bold viewAll-btn" data-mdb-ripple-color="dark">view
+                            all</button>
                     </a>
                 </div>
             </section>
         @endforeach
     </div>
 
-    <button type="button" class="btn btn-danger btn-floating btn-lg" id="btn-back-to-top">
-        <i class="fas fa-arrow-up"></i>
-    </button>
+    <div class="mt-5" style="height: 500px;">
+        <div class="mb-5" style="height:330px; background:#1d2023; position:relative">
+            <div class="space-top" style="height: 2vw"></div>
+            <div class="contactHeader text-center">
+                <h1 class="pt-5 text-white satisfy-font" style="font-size: 5rem;">Book Now</h1>
+                <span class="nunito-font h5" style="color: #ffa752;">Submit Your Room and Email</span>
+            </div>
+            <div class="container p-5">
+                <div class="container bg-success d-flex align-items-center justify-content-center" style="height: 150px;">
+                    <form action="">
+                        <div class="row">
+                            <div class="col-md-3 py-2">
+                                <div class="form-outline">
+                                    <input type="text" name="location" id="location-input" class="form-control form-control-lg bg-light" value="san jose" readonly/>
+                                    <label class="form-label nunito-font text-primary">Location</label>
+                                </div>
+                            </div>
+                            <div class="col-md-3 py-2">
+                                <div class="form-outline">
+                                    <input type="text" name="unit" id="unit-input" class="form-control form-control-lg bg-light" value="Choose Unit" readonly />
+                                    <label class="form-label nunito-font text-primary">Unit</label>
+                                </div>
+                            </div>
+                            <div class="col-md-4 py-2">
+                                <div class="form-outline">
+                                    <input type="email" name="email"class="form-control form-control-lg bg-light" required/>
+                                    <label class="form-label nunito-font text-primary">Email</label>
+                                </div>
+                            </div>
+                            <div class="col-md-2 py-2">
+                                <button class="contact100-form-btn nunito-font">
+                                    <span>
+                                        Submit
+                                        <i class="fa fa-long-arrow-right m-l-7" aria-hidden="true"></i>
+                                    </span>
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
 @endsection
 
 @section('javascript')
@@ -155,6 +193,7 @@
     <script>
         $(document).ready(function() {
             $('.location-content').addClass("show-animation-slideDown")
+            homepage();
         });
 
         //featured location coverflow initialize
@@ -170,165 +209,6 @@
             scrollwheel: false,
             touch: true,
         });
-
-        //scroll to location cluster
-        $('.scroll-link').on('click', function(event) {
-
-            if (this.hash !== "") {
-                event.preventDefault();
-
-                var hash = this.hash;
-
-                var cardNum = $(hash + ' .cluster .row .unit-card').length;
-                var noUnit = $(hash + ' .cluster .row .no-unit');
-                if (cardNum > 0) {
-                    noUnit.addClass('d-none');
-                    noUnit.removeClass('d-block');
-                } else {
-                    noUnit.removeClass('d-none');
-                    noUnit.addClass('d-block');
-                }
-
-                //Show animation
-                $('.cluster-section').each(function() {
-                    $('.cluster-section').removeAttr('style');
-                    $('.cluster-section .cluster').removeAttr('style');
-                });
-                $(hash).show();
-
-                $(hash + ' .cluster').fadeIn();
-
-                //Scroll to Unit cluster
-                if ($('.fixed-top').height() > 150) {
-                    $('html, body').animate({
-                        scrollTop: $(hash).offset().top - 100
-                    }, 1000, function() {});
-                } else {
-                    $('html, body').animate({
-                        scrollTop: $(hash).offset().top - $('.fixed-top').height()
-                    }, 1000, function() {});
-                }
-            }
-        });
-
-        $('.viewAll-link').click('click', function(e) {
-            event.preventDefault();
-            var hash = this.hash;
-
-            $(hash + ' .cluster .row .more-card').each(function(index) {
-                $(hash + ' .cluster .row .more-card').slideToggle(function() {
-                    if ($(this).is(':visible')) {
-                        $('.btn.viewAll-btn').text('view less')
-                    } else {
-                        $('.btn.viewAll-btn').text('view all')
-                    }
-                });
-            });
-        });
-
-        //Scroll to Top function
-        $(window).scroll(function() {
-
-            if ($(this).scrollTop() > 600) {
-                $("#btn-back-to-top").fadeIn();
-            } else {
-                $("#btn-back-to-top").fadeOut();
-            }
-        });
-        $("#btn-back-to-top").click(function() {
-            $("html, body").animate({
-                scrollTop: 0
-            }, 600);
-            return false;
-        });
     </script>
 
 @endsection
-
-
-
-{{-- @foreach ($locations as $location)
-@if ($loop->iteration % 2 == 0)
-    <section class="py-5 bg-light">
-    @else
-        <section class="py-5">
-@endif
-
-<div id="cluster-{{ $loop->index }}" class="content-header cluster cHeader{{ $loop->index }}">
-    <div class="text-center">
-        <h1 class="mx-3 paytone-font text-uppercase">{{ $location->location }}</h1>
-        <span class="nunito-font">Available Room For You.</span>
-        <div class="border-shape"></div>
-    </div>
-</div>
-<div class="container px-5 cluster cBody{{ $loop->index }}">
-    <div class="row justify-content-center">
-        @foreach ($units as $unit)
-            @if ($location->id == $unit->location_id)
-                <div class="col-md-4 unit-card">
-                    <div class="card mt-2">
-                        <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
-                            <img src="https://mdbootstrap.com/img/new/standard/nature/111.webp"
-                                class="img-fluid" />
-                            <a href="#!">
-                                <div class="mask" style="background-color: rgba(251, 251, 251, 0.15)">
-                                </div>
-                            </a>
-                        </div>
-
-                        <div class="card-body poppins-font">
-                            <h5 class="card-title text-capitalize fw-bold">Unit {{ $unit->name }}</h5>
-                            <p class="card-text">
-                                Some quick example text to build on the card title and make up the bulk of
-                                the
-                                card's content.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            @endif
-        @endforeach
-    </div>
-</div>
-<div class="footer text-center mt-5 cluster cFooter{{ $loop->index }}">
-    <button type="button" class="btn btn-primary">View More..</button>
-</div>
-</section>
-@endforeach --}}
-
-
-{{-- <div class="count-up-sec">
-    <div class="images-overlay"></div>
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 inner">
-                <div class="counting_sl">
-                    <span><i class="fa fa-gift"></i></span>
-                    <h2 class="counter">250</h2>
-                    <h4>Project Done</h4>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 inner">
-                <div class="counting_sl">
-                    <span><i class="fa fa-users"></i></span>
-                    <h2 class="counter">280</h2>
-                    <h4>happy client</h4>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 inner">
-                <div class="counting_sl">
-                    <span><i class="fa fa-institution"></i></span>
-                    <h2 class="counter">120</h2>
-                    <h4>Branches</h4>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 inner">
-                <div class="counting_sl">
-                    <span><i class="fa fa-user"></i></span>
-                    <h2 class="counter">240</h2>
-                    <h4>Our employees</h4>
-                </div>
-            </div>
-        </div>
-    </div>
-</div> --}}

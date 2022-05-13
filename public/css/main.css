@@ -1,3 +1,4 @@
+/* ==============[Background Parallax]============== */
 .background-parallax {
     /* The image used */
     background-image: url("/img/background/building.png");
@@ -16,6 +17,21 @@
     backdrop-filter: blur(3px);
 }
 
+.location-content {
+    opacity: 0;
+}
+
+/* ===[END]======[Background Parallax]============== */
+
+
+
+
+/* ==============[My Account Section]============== */
+.tab-header {
+    color: #8c01af;
+    background: #ebebeb;
+}
+
 .tab-body .row div {
     padding-block: 0.5rem;
 }
@@ -25,15 +41,10 @@
     font-weight: 700 !important;
 }
 
-.tab-header {
-    color: #8c01af;
-    background: #ebebeb;
-}
+/* ===[END]======[My Account Section]============== */
 
-.location-content {
-    opacity: 0;
-}
 
+/* ==============[Homepage Unit Section]============== */
 .cluster-section {
     display: none;
     opacity: 1;
@@ -44,19 +55,25 @@
     display: none;
 }
 
-.locationNav-wrapper{
+.locationNav-wrapper {
     background-color: #efeaea;
 }
 
-.btn.viewAll-btn:hover{
+.more-card {
+    display: none;
+}
+
+.btn.viewAll-btn:hover {
     transition: ease 0.8s;
     background-color: #f93154;
     color: white;
 }
 
-.more-card{
-    display: none;
-}
+/* ===[END]======[Homepage Unit Section]============== */
+
+
+
+/* ==============[Scroll Up Button]============== */
 
 #btn-back-to-top {
     position: fixed;
@@ -65,7 +82,11 @@
     display: none;
 }
 
-/* Border Shape Separator */
+/* ===[END]======[Scroll Up Button]============== */
+
+
+
+/* ===========[Border Shape Separator]====================== */
 .border-shape {
     background: #09be51 none repeat scroll 0 0;
     color: #fff;
@@ -106,4 +127,65 @@
     width: 100px;
 }
 
-/*End Border Shape Separator */
+/* ===[End]=============[Border Shape Separator]====== */
+
+
+
+
+/* ===========[Contact Us Button]====================== */
+.container-contact100-form-btn {
+    width: 100%;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    flex-wrap: wrap;
+    padding-top: 8px;
+}
+
+.contact100-form-btn {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 20px;
+    min-width: 160px;
+    height: 45px;
+    background-color: #1d2023;
+    border-radius: 25px;
+
+    font-family: Poppins-Regular;
+    font-size: 16px;
+    color: #fff;
+    line-height: 1.2;
+
+    -webkit-transition: all 0.4s;
+    -o-transition: all 0.4s;
+    -moz-transition: all 0.4s;
+    transition: all 0.4s;
+}
+
+.contact100-form-btn i {
+    -webkit-transition: all 0.4s;
+    -o-transition: all 0.4s;
+    -moz-transition: all 0.4s;
+    transition: all 0.4s;
+}
+
+.contact100-form-btn:hover {
+    background-color: #555a5e;
+}
+
+.contact100-form-btn:hover i {
+    -webkit-transform: translateX(10px);
+    -moz-transform: translateX(10px);
+    -ms-transform: translateX(10px);
+    -o-transform: translateX(10px);
+    transform: translateX(10px);
+}
+
+/* ===[End]=============[Contact Us Button]====== */
