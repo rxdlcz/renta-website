@@ -11,51 +11,94 @@
         </div>
     </div>
 
-    <div class="container contact-body">
-        <div class="row">
-            <div class="col-md-8">
-                <form class="contact100-form">
-            <div class="wrap-input100">
-                <span class="label-input100">Full Name:</span>
-                <input class="input100" type="text" name="name" placeholder="Enter full name">
+    <div class="container contact-body py-5 ">
+        <div class="row ps-5">
+            <div class="col-md-8 pe-5 mt-4">
+                <h2 class="p-3 text-uppercase">Send As a Message</h2>
+                <form class="">
+                    <fieldset>
+                        <div class="form-group d-flex ">
+                            <div class="form-outline shadow-4 m-2 half-col">
+                                <input type="text" class="form-control" />
+                                <label class="form-label" for="typeText">Firstname</label>
+                            </div>
+                            <div class="form-outline shadow-4 m-2 half-col">
+                                <input type="text" class="form-control" />
+                                <label class="form-label" for="lastname">Lastname</label>
+                            </div>
+                        </div>
+                        <div class="form-group d-flex ">
+                            <div class="form-outline shadow-4 m-2 half-col">
+                                <input type="email" class="form-control" />
+                                <label class="form-label" for="typeText">Email</label>
+                            </div>
+                            <div class="form-outline shadow-4 m-2 half-col">
+                                <input type="text" class="form-control" />
+                                <label class="form-label" for="lastname">Subject</label>
+                            </div>
+                        </div>
+                        <div class="form-outline shadow-4 m-2 full-col">
+                            <textarea class="form-control" id="textAreaExample" rows="10"></textarea>
+                            <label class="form-label" for="textAreaExample">Message</label>
+                        </div>
+                        <div class="form-group mt-4 ms-2">
+                            <button type="button"
+                                class="btn btn-outline-danger py-3 px-4 fw-bold viewAll-btn ripple-surface-dark"
+                                data-mdb-ripple-color="dark" style="">Send Now</button>
+                        </div>
+                    </fieldset>
+                </form>
             </div>
-            <div class="wrap-input100 ">
-                <span class="label-input100">Email:</span>
-                <input class="input100" type="text" name="email" placeholder="Enter email addess">
-                <span class="focus-input100"></span>
-            </div>
-            <div class="wrap-input100 ">
-                <span class="label-input100">Phone:</span>
-                <input class="input100" type="text" name="phone" placeholder="Enter phone number">
-                <span class="focus-input100"></span>
-            </div>
-            <div class="wrap-input100 ">
-                <span class="label-input100">Message:</span>
-                <textarea class="input100" name="message" placeholder="Your Comment..." style="height: 164px;"></textarea>
-                <span class="focus-input100"></span>
-            </div>
-            <div class="container-contact100-form-btn">
-                <button class="contact100-form-btn">
-                    <span>
-                        Submit
-                        <i class="fa fa-long-arrow-right m-l-7" aria-hidden="true"></i>
-                    </span>
-                </button>
-            </div>
-        </form>
+
+            <div class="col-md-4 my-4">
+                <div class="contact-person">
+                    <h2 class="py-3 px-2">Where To Find Us</h2>
+                    <div class="single-info">
+                        <h2>Address</h2>
+                        <p>Lorem ipsum dolor sit amet, eros rem dui sollicitudin eros sapien, volutpat mattis a, tempus
+                            etiam ut nostra non, eu vestibulum mi purus justo fringilla nulla, amet et volutpat. In morbi
+                            fusce facilisis, turpis et lorem in vitae odio.</p>
+                    </div>
+                    <div class="single-info">
+                        <h2>Email: </h2>
+                        <p>yourdomain@gmail.com</p>
+                    </div>
+                    <div class="single-info">
+                        <h2>Phone:</h2>
+                        <p>(+45) 123 456 789</p>
+                    </div>
+                    <div class="single-info">
+                        <h2>Skype:</h2>
+                        <p>your_skype</p>
+                    </div>
+                </div>
             </div>
         </div>
-        
+
+        <div class="col-md-12 px-5 mt-5">
+            <div class="map-heading">
+                <h2>Find Us on Google Map</h2>
+            </div>
+            <div class="map-wrapper p-3 shadow-5">
+                <div class="map-responsive">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m21!1m12!1m3!1d1929.3602782639757!2d121.13389868407523!3d14.728384546105053!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m6!3e0!4m0!4m3!3m2!1d14.728389199999999!2d121.13441619999999!5e0!3m2!1sen!2sph!4v1652470343538!5m2!1sen!2sph"
+                        width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+        </div>
     </div>
 
-    <div class="vh-100"></div>
 
 @endsection
 
 @section('javascript')
 
     <script>
-        $(document).ready(function() {});
+        $(document).ready(function() {
+            
+        });
     </script>
 
 @endsection
