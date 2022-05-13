@@ -146,7 +146,7 @@
             <div class="space-top"></div>
             <div class="contactHeader text-center">
                 <h1 class="pt-5 text-white satisfy-font">Book Now</h1>
-                <span class="nunito-font h5">Choose Your Room and Submit</span>
+                <span class="nunito-font h5">Book Your Chosen Room</span>
             </div>
             <div class="container body-content p-5">
                 <div class="container bg-light d-flex align-items-center justify-content-center px-5 shadow-5">
@@ -158,9 +158,9 @@
                                     class="form-control form-control-lg bg-light" value="Choose Location" readonly />
                             </div>
                             <div class="col-md-3">
-                                <label class="form-label nunito-font text-dark ps-2">Unit</label>
+                                <label class="form-label nunito-font text-dark ps-2">Room</label>
                                 <input type="text" name="unit" id="unit-input" class="form-control form-control-lg bg-light"
-                                    value="Choose Unit" readonly />
+                                    value="Choose Room" readonly />
                             </div>
                             <div class="col-md-4">
                                 <label class="form-label nunito-font text-dark ps-2">Email</label>
@@ -170,7 +170,7 @@
                             <div class="col-md-2 d-flex align-content-end flex-wrap">
                                 <button class="contact100-form-btn nunito-font">
                                     <span>
-                                        Submit
+                                        Book
                                         <i class="fa fa-long-arrow-right m-l-7" aria-hidden="true"></i>
                                     </span>
                                 </button>
