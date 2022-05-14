@@ -44,6 +44,10 @@
     display: none;
 }
 
+.unit-card, #location-input, #unit-input{
+    cursor: pointer;
+}
+
 .locationNav-wrapper {
     background-color: #efeaea;
 }
@@ -142,7 +146,6 @@
         fade 1500ms;
 }
 
-
 /* Input Style */
 .half-col {
     flex: 0 0 50%;
@@ -155,6 +158,10 @@
 }
 
 /* Map */
+
+.col-map{
+    opacity: 0;
+}
 
 .map-responsive {
     overflow: hidden;

@@ -58,7 +58,7 @@
 
     <div class="container-fluid">
         @foreach ($locations as $location)
-            <section class="py-5 cluster-section" {{ $loop->index == 0 ? 'style=opacity:1;display:block;' : '' }}
+            <section class="py-5 cluster-section sec-active" {{ $loop->index == 0 ? 'style=opacity:1;display:block;' : '' }}
                 id="cluster-{{ $loop->index }}">
                 <div class="content-header cHeader{{ $loop->index }}">
                     <div class="text-center">
@@ -155,7 +155,7 @@
                             <div class="col-md-3">
                                 <label class="form-label nunito-font text-dark ps-2">Location</label>
                                 <input type="text" name="location" id="location-input"
-                                    class="form-control form-control-lg bg-light" value="Choose Location" readonly />
+                                    class="form-control form-control-lg bg-light" value="san jose" readonly />
                             </div>
                             <div class="col-md-3">
                                 <label class="form-label nunito-font text-dark ps-2">Room</label>

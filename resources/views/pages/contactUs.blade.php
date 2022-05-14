@@ -13,7 +13,7 @@
 
     <div class="container contact-body py-5 ">
         <div class="row ps-5">
-            <div class="col-md-8 pe-5 mt-4">
+            <div class="col-md-8 pe-5 mt-4 show-animation-slideLeftFade">
                 <h2 class="p-3 text-uppercase">Send As a Message</h2>
                 <form class="">
                     <fieldset>
@@ -50,7 +50,7 @@
                 </form>
             </div>
 
-            <div class="col-md-4 my-4">
+            <div class="col-md-4 my-4 show-animation-slideRightFade">
                 <div class="contact-person">
                     <h2 class="py-3 px-2">Where To Find Us</h2>
                     <div class="single-info">
@@ -75,7 +75,7 @@
             </div>
         </div>
 
-        <div class="col-md-12 px-5 mt-5">
+        <div class="col-md-12 px-5 mt-5 col-map">
             <div class="map-heading">
                 <h2>Find Us on Google Map</h2>
             </div>
@@ -97,7 +97,14 @@
 
     <script>
         $(document).ready(function() {
-            
+            $('.col-map').waypoint(function() {
+                $('.col-map').css({
+                    animation: "slide-up 1000ms,fade 1500ms",
+                    opacity: "1"
+                });
+            }, {
+                offset: '75%'
+            });
         });
     </script>
 

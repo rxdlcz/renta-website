@@ -100,8 +100,9 @@
     <script src="js/jquery-3.6.0.min.js"></script>
     <script src="js/mdb.min.js"></script>
 
+    <script src="js/jquery.waypoints.min.js"></script>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.flipster/1.1.5/jquery.flipster.min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/ScrollMagic.min.js"></script>
 
     @yield('javascript')
     <script>
