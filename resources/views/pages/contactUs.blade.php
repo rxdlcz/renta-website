@@ -1,6 +1,6 @@
 @extends('layout.navigation')
 
-@section('title', 'Home')
+@section('title', 'Contact Us')
 @section('content')
     <div class="background">
         <div class="contact-wrapper pb-5 d-flex justify-content-center">
