@@ -84,6 +84,25 @@ function homepage() {
             scrollLeft: 0
         }, 500);
     });
+
+    $('.contact100-form-btn').on('click', function (e) {
+        if ($('#unit-input').val() == "Choose Room") {
+            e.preventDefault();
+            var $container = $("html,body");
+            var $scrollTo = $('.sec-active');
+
+            $('.container.cluster').addClass('zoom-in-out-box');
+
+            setTimeout(function () {
+                $('.container.cluster').removeClass('zoom-in-out-box');
+            }, 1500);
+
+            $container.animate({
+                scrollTop: $scrollTo.offset().top - $('.fixed-top').height() + 50,
+                scrollLeft: 0
+            }, 500);
+        }
+    });
     /* [END]============[Scroll to location cluster]================ */
 
 

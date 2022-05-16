@@ -27,5 +27,8 @@ function switchStatus($statNum)
         case "7":
             return "Occupied";
             break;
+        case "8":
+            return "New";
+            break;
     }
 }

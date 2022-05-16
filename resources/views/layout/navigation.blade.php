@@ -19,7 +19,7 @@
 
 </head>
 
-<body>
+<body >
     <header class="fixed-top show">
         <nav class="navbar navbar-expand-lg navbar-light px-3">
             <a class="navbar-brand p-0 show-delay" href="#"><img src="img/logo.png" class="img-logo"></a>

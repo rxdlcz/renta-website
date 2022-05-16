@@ -22,7 +22,7 @@
                                         style="height: 450px;width: 330px;">
                                         <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
                                             <img src="https://mdbootstrap.com/img/new/standard/nature/111.webp"
-                                                class="img-fluid" loading="lazy"/>
+                                                class="img-fluid" loading="lazy" />
                                             <a>
                                                 <div class="mask"
                                                     style="background-color: rgba(251, 251, 251, 0.15)">
@@ -58,8 +58,8 @@
 
     <div class="container-fluid">
         @foreach ($locations as $location)
-            <section class="py-5 cluster-section sec-active" {{ $loop->index == 0 ? 'style=opacity:1;display:block;' : '' }}
-                id="cluster-{{ $loop->index }}">
+            <section class="py-5 cluster-section sec-active"
+                {{ $loop->index == 0 ? 'style=opacity:1;display:block;' : '' }} id="cluster-{{ $loop->index }}">
                 <div class="content-header cHeader{{ $loop->index }}">
                     <div class="text-center">
                         <h1 class="mx-3 paytone-font text-uppercase location-name">{{ $location->location }}</h1>
@@ -84,7 +84,7 @@
                                     <div class="card mt-3">
                                         <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
                                             <img src="https://mdbootstrap.com/img/new/standard/nature/111.webp"
-                                                class="img-fluid" loading="lazy"/>
+                                                class="img-fluid" loading="lazy" />
                                             <a>
                                                 <div class="mask"
                                                     style="background-color: rgba(251, 251, 251, 0.15)">
@@ -107,7 +107,7 @@
                                     <div class="card mt-3">
                                         <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
                                             <img src="https://mdbootstrap.com/img/new/standard/nature/111.webp"
-                                                class="img-fluid" loading="lazy"/>
+                                                class="img-fluid" loading="lazy" />
                                             <a>
                                                 <div class="mask"
                                                     style="background-color: rgba(251, 251, 251, 0.15)">
@@ -150,7 +150,8 @@
             </div>
             <div class="container body-content p-5">
                 <div class="container bg-light d-flex align-items-center justify-content-center px-5 shadow-5">
-                    <form action="">
+                    <form action="/bookNow" method="POST" id="bookNowForm">
+                        @csrf
                         <div class="row">
                             <div class="col-md-3">
                                 <label class="form-label nunito-font text-dark ps-2">Location</label>
@@ -164,8 +165,8 @@
                             </div>
                             <div class="col-md-4">
                                 <label class="form-label nunito-font text-dark ps-2">Email</label>
-                                <input type="email" name="email" class="form-control form-control-lg bg-light" required />
-
+                                <input type="email" name="email" id="email-input"
+                                    class="form-control form-control-lg bg-light" required />
                             </div>
                             <div class="col-md-2 d-flex align-content-end flex-wrap">
                                 <button class="contact100-form-btn nunito-font">
@@ -182,6 +183,38 @@
         </div>
     </div>
 
+    @if (Session::has('confirmation'))
+        <div class="modal fade" id="successModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content poppins-font">
+                    <div class="modal-header bg-success">
+                        <h5 class="modal-title">Confirmation</h5>
+                        <button type="button" class="btn-close" data-mdb-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body px-4">{{ Session::get('confirmation') }}</div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-mdb-dismiss="modal">OK</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    @endif
+    @if (Session::has('success'))
+        <div class="modal fade" id="successModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content poppins-font">
+                    <div class="modal-header bg-success">
+                        <h5 class="modal-title">Thank You for your Booking!</h5>
+                        <button type="button" class="btn-close" data-mdb-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body px-4">{{ Session::get('success') }}</div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-mdb-dismiss="modal">OK</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    @endif
 
 @endsection
 
@@ -191,6 +224,7 @@
         $(document).ready(function() {
             $('.location-content').addClass("show-animation-slideDown")
             homepage();
+            $('#successModal').modal('show')
         });
 
         //featured location coverflow initialize

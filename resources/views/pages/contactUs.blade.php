@@ -15,35 +15,40 @@
         <div class="row ps-5">
             <div class="col-md-8 pe-5 mt-4 show-animation-slideLeftFade">
                 <h2 class="p-3 text-uppercase">Send As a Message</h2>
-                <form class="">
+                @if (Session::has('success'))
+                    <div class="alert alert-success mx-2" role="alert">
+                        {{ Session::get('success') }}
+                    </div>
+                @endif
+                <form action="/contactUs" method="POST">
+                    @csrf
                     <fieldset>
                         <div class="form-group d-flex ">
                             <div class="form-outline shadow-4 m-2 half-col">
-                                <input type="text" class="form-control" />
+                                <input type="text" class="form-control" name="firstname" value="{{old('firstname')}}" required />
                                 <label class="form-label" for="typeText">Firstname</label>
                             </div>
                             <div class="form-outline shadow-4 m-2 half-col">
-                                <input type="text" class="form-control" />
+                                <input type="text" class="form-control" name="lastname" {{old('lastname')}} required />
                                 <label class="form-label" for="lastname">Lastname</label>
                             </div>
                         </div>
                         <div class="form-group d-flex ">
                             <div class="form-outline shadow-4 m-2 half-col">
-                                <input type="email" class="form-control" />
+                                <input type="email" class="form-control" name="email" {{old('email')}} required />
                                 <label class="form-label" for="typeText">Email</label>
                             </div>
                             <div class="form-outline shadow-4 m-2 half-col">
-                                <input type="text" class="form-control" />
+                                <input type="text" class="form-control" name="subject" {{old('subject')}} required />
                                 <label class="form-label" for="lastname">Subject</label>
                             </div>
                         </div>
                         <div class="form-outline shadow-4 m-2 full-col">
-                            <textarea class="form-control" id="textAreaExample" rows="10"></textarea>
+                            <textarea class="form-control" id="textAreaExample" rows="10" name="message" required> {{old('message')}} </textarea>
                             <label class="form-label" for="textAreaExample">Message</label>
                         </div>
                         <div class="form-group mt-4 ms-2">
-                            <button type="button"
-                                class="btn btn-outline-danger py-3 px-4 fw-bold viewAll-btn ripple-surface-dark"
+                            <button class="btn btn-outline-danger py-3 px-4 fw-bold viewAll-btn ripple-surface-dark"
                                 data-mdb-ripple-color="dark" style="">Send Now</button>
                         </div>
                     </fieldset>
