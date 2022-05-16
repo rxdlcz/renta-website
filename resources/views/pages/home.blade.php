@@ -22,7 +22,7 @@
                                         style="height: 450px;width: 330px;">
                                         <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
                                             <img src="https://mdbootstrap.com/img/new/standard/nature/111.webp"
-                                                class="img-fluid" />
+                                                class="img-fluid" loading="lazy"/>
                                             <a>
                                                 <div class="mask"
                                                     style="background-color: rgba(251, 251, 251, 0.15)">
@@ -84,7 +84,7 @@
                                     <div class="card mt-3">
                                         <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
                                             <img src="https://mdbootstrap.com/img/new/standard/nature/111.webp"
-                                                class="img-fluid" />
+                                                class="img-fluid" loading="lazy"/>
                                             <a>
                                                 <div class="mask"
                                                     style="background-color: rgba(251, 251, 251, 0.15)">
@@ -107,7 +107,7 @@
                                     <div class="card mt-3">
                                         <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
                                             <img src="https://mdbootstrap.com/img/new/standard/nature/111.webp"
-                                                class="img-fluid" />
+                                                class="img-fluid" loading="lazy"/>
                                             <a>
                                                 <div class="mask"
                                                     style="background-color: rgba(251, 251, 251, 0.15)">
