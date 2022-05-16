@@ -8,9 +8,15 @@
     animation: slide-up 500ms;
 }
 
+.show-animation-slideUp-1 {
+    opacity: 1 !important;
+    animation: slide-up 1000ms;
+}
+
 .show-animation-slideLeft {
     overflow: hidden;
     animation: width-slide-left 800ms;
+    white-space: nowrap;
 }
 
 .show-animation-slideLeftFade {
@@ -23,10 +29,6 @@
     animation: slide-right 1000ms, fade 1500ms;
 }
 
-.show-animation-fade {
-    animation: fade 2500ms;
-}
-
 .show-delay {
     opacity: 1 !important;
     animation: slide-down 1000ms, fade 1500ms;
@@ -34,6 +36,15 @@
 
 .show-animation-fade {
     animation: fade 500ms;
+}
+.show-animation-fade-1 {
+    animation: fade 1000ms;
+}
+.show-animation-fade-2 {
+    animation: fade 2000ms;
+}
+.show-animation-fade-3 {
+    animation: fade 2000ms;
 }
 
 .zoom-in-out-box {

@@ -185,6 +185,46 @@
 
 
 
+/* ==============[About Us]============== */
+
+.about-wrapper {
+    backdrop-filter: blur(3px);
+}
+
+.about-wrapper .content-header {
+    width: fit-content;
+}
+
+.about-wrapper .content-header h1 {
+    font-size: 5rem;
+    color: cornsilk;
+    overflow: hidden;
+    border-right: .15em solid aliceblue;
+    white-space: nowrap;
+    margin: 0 auto;
+    animation:
+        typing 2s steps(10, end),
+        blink-caret .75s step-end infinite;
+}
+
+.about-wrapper .content-header span {
+    display: block;
+    animation: slide-up 1000ms,
+        fade 1500ms;
+}
+
+.innerWrapper{
+    width: 700px;
+}
+
+.img-border{
+    background: #9b988e;
+}
+/* ===[END]======[About US]============== */
+
+
+
+
 
 /* ==============[Scroll Up Button]============== */
 
@@ -327,7 +367,7 @@
         padding-top: 250px;
     }
 
-    .contact-wrapper {
+    .contact-wrapper, .about-wrapper {
         padding-top: 280px;
     }
 }
@@ -342,7 +382,7 @@
         padding-top: 100px !important;
     }
 
-    .contact-wrapper {
+    .contact-wrapper, .about-wrapper {
         padding-top: 100px !important;
     }
 }
