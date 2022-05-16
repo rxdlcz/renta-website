@@ -90,7 +90,7 @@
                     },
                     success: function(data) {
                         if (data.status) {
-                            window.location.href = "/";
+                            window.location.href = "/myAccount";
                         } else {
                             $('.alert-danger').css("display", "block");
                             $('.alert-danger').text('Invalid Credentials.');
