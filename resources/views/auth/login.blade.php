@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    
+
     {!! htmlScriptTagJsApi() !!}
     <title>Laravel</title>
     <style>
@@ -68,7 +68,7 @@
                             <hr class="">
 
                             <p>Don't have an Account yet?</p>
-                            <p>Contact us at: <a href="#"">cms.renta@gmail.com</a></p>
+                            <p>Contact us at: <a href="#"">com.renta@gmail.com</a></p>
                         </div>
                     </div>
                 </div>
