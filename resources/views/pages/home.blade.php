@@ -21,7 +21,7 @@
                                     <div class="card text-center border border-primary shadow-0 "
                                         style="height: 450px;width: 330px;">
                                         <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
-                                            <img src="https://mdbootstrap.com/img/new/standard/nature/111.webp"
+                                            <img src="{{ env('CRM_URL') . "/img/locationImg/$location->img"}}"
                                                 class="img-fluid" loading="lazy" />
                                             <a>
                                                 <div class="mask"
@@ -33,9 +33,7 @@
                                         </div>
                                         <div class="card-body">
                                             <p class="card-text">
-                                                Some quick example text to build on the card title and make up the bulk of
-                                                the
-                                                card's content.
+                                                {{ $location->description}}
                                             </p>
                                         </div>
                                         <div class="card-footer">
@@ -83,7 +81,7 @@
                                 <div class="col-md-4 unit-card">
                                     <div class="card mt-3">
                                         <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
-                                            <img src="https://mdbootstrap.com/img/new/standard/nature/111.webp"
+                                            <img src="{{ env('CRM_URL') . "/img/unitImg/$unit->img"}}" onerror="this.onerror=null;this.src='img/defaultimage.png';"
                                                 class="img-fluid" loading="lazy" />
                                             <a>
                                                 <div class="mask"
@@ -94,10 +92,7 @@
                                         <div class="card-body poppins-font">
                                             <h5 class="card-title text-capitalize fw-bold">Unit {{ $unit->name }}</h5>
                                             <p class="card-text">
-                                                Some quick example text to build on the card title and make up the bulk
-                                                of
-                                                the
-                                                card's content.
+                                                {{$unit->description}}
                                             </p>
                                         </div>
                                     </div>
